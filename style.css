@@ -190,6 +190,28 @@ section > h2 {
   margin: 0;
 }
 
+.hero-rhizome {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.hero-rhizome svg {
+  display: block;
+  width: 100%;
+  height: clamp(120px, 18vw, 260px);
+  overflow: visible;
+}
+
+.hero-rhizome .root {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.hero-rhizome circle {
+  fill: var(--rust);
+}
 
 /* STATEMENT
 ======================================== */
