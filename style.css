@@ -169,10 +169,12 @@ section > h2 {
 .hero h1 {
   margin: 0;
 
-  font-size: clamp(92px, 18vw, 245px);
-  line-height: 0.72;
-  letter-spacing: -0.075em;
+  font-size: clamp(72px, 13vw, 210px);
+  line-height: 0.9;
+  letter-spacing: -0.065em;
   font-weight: 500;
+
+  white-space: nowrap;
 }
 
 .hero-intro {
@@ -487,9 +489,10 @@ blockquote {
   }
 
   .hero h1 {
-    font-size: clamp(90px, 31vw, 150px);
-  }
-
+  font-size: clamp(54px, 17vw, 105px);
+  white-space: nowrap;
+}
+   
   .hero-intro {
     margin-top: 65px;
   }
