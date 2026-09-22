@@ -243,7 +243,7 @@ section > h2 {
   margin-top: 70px;
 }
 
-.project-meta {
+.work .project-meta {
   display: grid;
   grid-template-columns: 1fr 2fr auto;
   gap: 20px;
@@ -257,7 +257,7 @@ section > h2 {
   text-transform: uppercase;
 }
 
-.project-meta p {
+.work .project-meta p {
   margin: 0;
 }
 
@@ -529,7 +529,7 @@ blockquote {
     margin-left: 0;
   }
 
-  .project-meta {
+  .work .project-meta {
     grid-template-columns: 1fr;
     gap: 4px;
   }
@@ -563,16 +563,16 @@ blockquote {
 ======================================== */
 
 .work-section {
-  padding: 9rem 5vw;
-  background: #F4EFE6;
-  color: #1A1A1A;
+  padding: clamp(90px, 10vw, 150px) var(--page-padding);
+  background: var(--paper);
+  color: var(--ink);
 }
 
 .section-intro {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  margin-bottom: 10rem;
+  grid-template-columns: minmax(140px, 0.7fr) minmax(280px, 1.3fr);
+  gap: clamp(30px, 6vw, 90px);
+  margin-bottom: clamp(90px, 11vw, 150px);
 }
 
 .section-label,
@@ -587,30 +587,41 @@ blockquote {
 .section-description {
   max-width: 520px;
   margin: 0;
-  font-size: 1.15rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
+  line-height: 1.55;
 }
 
 
 /* PROJECT HEADER */
 
 .residency-header {
-  margin-bottom: 3rem;
+  margin-bottom: clamp(40px, 6vw, 80px);
 }
 
 .residency-header h2 {
+  margin: 1rem 0 1.5rem;
   font-size: clamp(4rem, 10vw, 9rem);
   line-height: 0.85;
   font-weight: 400;
-  margin: 1rem 0 1.5rem;
 }
 
-.project-meta {
+.residency-header .project-meta {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
   font-size: 0.9rem;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 
-/* IMAGES */
+/* IMAGES â€” deliberately restrained for editorial scale */
+
+.residency figure {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
 .residency img {
   display: block;
@@ -618,43 +629,44 @@ blockquote {
   height: auto;
 }
 
+/* Main opening image */
 .project-hero {
-  width: 78%;
-  margin: 5rem 0 9rem auto;
+  width: min(68vw, 760px);
+  margin: 0 auto clamp(90px, 10vw, 145px);
 }
 
 .project-hero img {
-  max-height: 85vh;
-  object-fit: cover;
+  max-height: none;
+  object-fit: contain;
 }
 
 
 /* STATEMENT */
 
 .project-statement {
-  max-width: 1000px;
-  margin: 0 0 7rem;
+  max-width: 760px;
+  margin: 0 0 clamp(55px, 7vw, 95px);
 }
 
 .project-statement h3 {
-  font-size: clamp(3rem, 7vw, 7rem);
-  line-height: 0.95;
+  margin: 0;
+  font-size: clamp(2.7rem, 5.5vw, 5.8rem);
+  line-height: 0.96;
   font-weight: 400;
   letter-spacing: -0.04em;
-  margin: 0;
 }
 
 
 /* BODY COPY */
 
 .narrow-copy {
-  width: min(620px, 100%);
-  margin-left: 17%;
+  width: min(560px, 100%);
+  margin-left: clamp(0px, 17%, 220px);
 }
 
 .project-copy {
-  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
-  line-height: 1.55;
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
+  line-height: 1.6;
 }
 
 .project-copy p + p {
@@ -665,8 +677,8 @@ blockquote {
 /* PLACE */
 
 .place-image {
-  width: 48%;
-  margin: 11rem 8% 12rem auto;
+  width: min(38vw, 400px);
+  margin: clamp(90px, 11vw, 155px) 10% clamp(100px, 12vw, 165px) auto;
 }
 
 .place-image figcaption {
@@ -680,24 +692,25 @@ blockquote {
 
 .research-grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 8vw;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(280px, 1.2fr);
+  gap: clamp(45px, 8vw, 120px);
   align-items: center;
-  margin: 12rem 0;
+  margin: clamp(100px, 12vw, 170px) 0;
 }
 
 .research-grid figure {
+  width: min(100%, 330px);
   margin: 0;
 }
 
 .research-copy {
-  max-width: 540px;
+  max-width: 500px;
 }
 
 .large-copy {
-  font-size: clamp(1.6rem, 3vw, 3rem);
-  line-height: 1.15;
   margin-top: 2rem;
+  font-size: clamp(1.45rem, 2.4vw, 2.5rem);
+  line-height: 1.2;
 }
 
 
@@ -705,48 +718,49 @@ blockquote {
 
 .food-grid {
   display: grid;
-  grid-template-columns: 1fr 0.72fr;
-  gap: 2vw;
+  grid-template-columns: minmax(0, 400px) minmax(0, 300px);
+  gap: clamp(18px, 3vw, 45px);
   align-items: start;
-  margin: 12rem 0 2rem;
+  justify-content: start;
+  margin: clamp(100px, 12vw, 170px) 0 2rem;
 }
 
 .food-grid figure {
+  width: 100%;
   margin: 0;
 }
 
 .food-grid figure:nth-child(2) {
-  margin-top: 10rem;
+  margin-top: clamp(45px, 7vw, 90px);
 }
 
 .ingredient-list {
   max-width: 650px;
-  line-height: 1.7;
   margin: 3rem 0 7rem;
+  line-height: 1.7;
 }
 
 
-/* TABLE */
+/* TABLE / COOKING */
 
 .table-image {
-  width: 88%;
-  margin: 12rem auto 6rem 0;
+  width: min(55vw, 600px);
+  margin: clamp(100px, 12vw, 170px) auto clamp(70px, 8vw, 110px) 0;
 }
 
 
 /* PEOPLE */
 
 .people-image {
-  width: 72%;
-  margin: 12rem 0 7rem auto;
+  width: min(52vw, 580px);
+  margin: clamp(100px, 12vw, 170px) 0 clamp(70px, 8vw, 110px) auto;
 }
 
 .project-closing {
+  max-width: 900px;
   margin: 0;
-  padding: 5rem 0 2rem;
-  max-width: 1100px;
-
-  font-size: clamp(2.5rem, 5.8vw, 6rem);
+  padding: 3rem 0 1rem;
+  font-size: clamp(2.2rem, 4.6vw, 4.8rem);
   line-height: 1.03;
   letter-spacing: -0.035em;
   font-weight: 400;
@@ -758,15 +772,14 @@ blockquote {
 ======================================== */
 
 .collaboration-section {
-  background: #1A1A1A;
-  color: #F4EFE6;
-  padding: 10rem 5vw;
+  padding: clamp(100px, 10vw, 150px) var(--page-padding);
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .collaboration-section h2 {
   max-width: 1050px;
   margin: 4rem 0;
-
   font-size: clamp(2.7rem, 6vw, 6rem);
   line-height: 1;
   letter-spacing: -0.035em;
@@ -776,26 +789,24 @@ blockquote {
 .collaboration-section > p:not(.section-label) {
   max-width: 620px;
   margin-left: auto;
-
   font-size: 1.2rem;
   line-height: 1.6;
 }
 
-.text-link {
+.collaboration-section .text-link {
   display: inline-block;
   margin-top: 5rem;
-  color: inherit;
-  text-decoration: none;
+  padding-bottom: 0.3rem;
   border-bottom: 1px solid currentColor;
-
+  color: inherit;
   font-size: 0.78rem;
   letter-spacing: 0.1em;
-  padding-bottom: 0.3rem;
+  text-decoration: none;
 }
 
 
 /* ========================================
-   MOBILE
+   GREECE / COLLABORATION â€” MOBILE
 ======================================== */
 
 @media (max-width: 768px) {
@@ -814,20 +825,17 @@ blockquote {
     font-size: 20vw;
   }
 
-  .project-hero,
-  .place-image,
-  .table-image,
-  .people-image {
-    width: 100%;
-    margin: 4rem 0;
+  .project-hero {
+    width: min(100%, 620px);
+    margin: 0 auto 5rem;
   }
 
   .project-statement {
-    margin: 6rem 0;
+    margin: 0 0 4rem;
   }
 
   .project-statement h3 {
-    font-size: 13vw;
+    font-size: 12vw;
   }
 
   .narrow-copy {
@@ -835,29 +843,48 @@ blockquote {
     margin-left: 0;
   }
 
+  .place-image {
+    width: min(82%, 380px);
+    margin: 5rem 0 6rem auto;
+  }
+
   .research-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
-    margin: 7rem 0;
+    margin: 6rem 0;
+  }
+
+  .research-grid figure {
+    width: min(72%, 320px);
   }
 
   .food-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.7rem;
-    margin: 7rem 0 2rem;
+    grid-template-columns: 1fr 0.78fr;
+    gap: 0.8rem;
+    margin: 6rem 0 2rem;
   }
 
   .food-grid figure:nth-child(2) {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 
   .ingredient-list {
     margin-bottom: 5rem;
   }
 
+  .table-image {
+    width: min(88%, 560px);
+    margin: 6rem auto 4rem 0;
+  }
+
+  .people-image {
+    width: min(88%, 540px);
+    margin: 6rem 0 4rem auto;
+  }
+
   .project-closing {
-    font-size: 10vw;
-    padding-top: 4rem;
+    padding-top: 3rem;
+    font-size: 9.5vw;
   }
 
   .collaboration-section {
