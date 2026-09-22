@@ -121,7 +121,7 @@ section {
 }
 
 section > h2 {
-  max-width: 1050px;
+  max-width: 1250px;
   margin-bottom: clamp(45px, 7vw, 90px);
 
   font-size: clamp(38px, 6vw, 82px);
