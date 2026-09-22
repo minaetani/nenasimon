@@ -149,7 +149,7 @@ section > h2 {
 ======================================== */
 
 .hero {
-  min-height: calc(100vh - 55px);
+ min-height: 100vh;
 
   display: flex;
   align-items: center;
@@ -178,7 +178,7 @@ section > h2 {
 }
 
 .hero-intro {
-  margin-top: clamp(60px, 9vw, 110px);
+  margin-top: 35px;
   margin-left: auto;
   width: min(100%, 370px);
 
@@ -192,20 +192,22 @@ section > h2 {
 
 .hero-rhizome {
   width: 100%;
-  margin-top: 25px;
+  margin-top: 35px;
 }
 
 .hero-rhizome svg {
   display: block;
   width: 100%;
-  height: clamp(120px, 18vw, 260px);
+  height: auto;
+  max-height: 210px;
   overflow: visible;
 }
 
 .hero-rhizome .root {
   fill: none;
   stroke: var(--ink);
-  stroke-width: 2;
+  stroke-width: 1.5;
+  stroke-linecap: round;
   vector-effect: non-scaling-stroke;
 }
 
