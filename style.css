@@ -556,5 +556,319 @@ blockquote {
     align-items: flex-start;
     gap: 30px;
   }
+}
 
+/* ========================================
+   SELECTED WORK / GREECE RESIDENCY
+======================================== */
+
+.work-section {
+  padding: 9rem 5vw;
+  background: #F4EFE6;
+  color: #1A1A1A;
+}
+
+.section-intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  margin-bottom: 10rem;
+}
+
+.section-label,
+.project-type,
+.small-label,
+.ingredient-list {
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.section-description {
+  max-width: 520px;
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+
+/* PROJECT HEADER */
+
+.residency-header {
+  margin-bottom: 3rem;
+}
+
+.residency-header h2 {
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.85;
+  font-weight: 400;
+  margin: 1rem 0 1.5rem;
+}
+
+.project-meta {
+  font-size: 0.9rem;
+}
+
+
+/* IMAGES */
+
+.residency img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-hero {
+  width: 78%;
+  margin: 5rem 0 9rem auto;
+}
+
+.project-hero img {
+  max-height: 85vh;
+  object-fit: cover;
+}
+
+
+/* STATEMENT */
+
+.project-statement {
+  max-width: 1000px;
+  margin: 0 0 7rem;
+}
+
+.project-statement h3 {
+  font-size: clamp(3rem, 7vw, 7rem);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+
+/* BODY COPY */
+
+.narrow-copy {
+  width: min(620px, 100%);
+  margin-left: 17%;
+}
+
+.project-copy {
+  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+  line-height: 1.55;
+}
+
+.project-copy p + p {
+  margin-top: 1.5em;
+}
+
+
+/* PLACE */
+
+.place-image {
+  width: 48%;
+  margin: 11rem 8% 12rem auto;
+}
+
+.place-image figcaption {
+  margin-top: 0.8rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+
+/* RESEARCH */
+
+.research-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 8vw;
+  align-items: center;
+  margin: 12rem 0;
+}
+
+.research-grid figure {
+  margin: 0;
+}
+
+.research-copy {
+  max-width: 540px;
+}
+
+.large-copy {
+  font-size: clamp(1.6rem, 3vw, 3rem);
+  line-height: 1.15;
+  margin-top: 2rem;
+}
+
+
+/* FOOD */
+
+.food-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.72fr;
+  gap: 2vw;
+  align-items: start;
+  margin: 12rem 0 2rem;
+}
+
+.food-grid figure {
+  margin: 0;
+}
+
+.food-grid figure:nth-child(2) {
+  margin-top: 10rem;
+}
+
+.ingredient-list {
+  max-width: 650px;
+  line-height: 1.7;
+  margin: 3rem 0 7rem;
+}
+
+
+/* TABLE */
+
+.table-image {
+  width: 88%;
+  margin: 12rem auto 6rem 0;
+}
+
+
+/* PEOPLE */
+
+.people-image {
+  width: 72%;
+  margin: 12rem 0 7rem auto;
+}
+
+.project-closing {
+  margin: 0;
+  padding: 5rem 0 2rem;
+  max-width: 1100px;
+
+  font-size: clamp(2.5rem, 5.8vw, 6rem);
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+  font-weight: 400;
+}
+
+
+/* ========================================
+   RESIDENCIES & COLLABORATIONS
+======================================== */
+
+.collaboration-section {
+  background: #1A1A1A;
+  color: #F4EFE6;
+  padding: 10rem 5vw;
+}
+
+.collaboration-section h2 {
+  max-width: 1050px;
+  margin: 4rem 0;
+
+  font-size: clamp(2.7rem, 6vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-weight: 400;
+}
+
+.collaboration-section > p:not(.section-label) {
+  max-width: 620px;
+  margin-left: auto;
+
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 5rem;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  padding-bottom: 0.3rem;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .work-section {
+    padding: 6rem 1.25rem;
+  }
+
+  .section-intro {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 6rem;
+  }
+
+  .residency-header h2 {
+    font-size: 20vw;
+  }
+
+  .project-hero,
+  .place-image,
+  .table-image,
+  .people-image {
+    width: 100%;
+    margin: 4rem 0;
+  }
+
+  .project-statement {
+    margin: 6rem 0;
+  }
+
+  .project-statement h3 {
+    font-size: 13vw;
+  }
+
+  .narrow-copy {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .research-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin: 7rem 0;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+    margin: 7rem 0 2rem;
+  }
+
+  .food-grid figure:nth-child(2) {
+    margin-top: 4rem;
+  }
+
+  .ingredient-list {
+    margin-bottom: 5rem;
+  }
+
+  .project-closing {
+    font-size: 10vw;
+    padding-top: 4rem;
+  }
+
+  .collaboration-section {
+    padding: 7rem 1.25rem;
+  }
+
+  .collaboration-section h2 {
+    font-size: 11vw;
+  }
+
+  .collaboration-section > p:not(.section-label) {
+    margin-left: 0;
+  }
 }
