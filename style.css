@@ -1,7 +1,7 @@
-/* ========================================
-   NENASIMON
-   Base stylesheet
-======================================== */
+/* =================================
+   NENASIMON — RESPONSIVE PORTFOLIO
+   Mobile-first
+   ================================= */
 
 :root {
   --paper: #F4EFE6;
@@ -9,15 +9,13 @@
   --rust: #C7511F;
   --olive: #5A6B3F;
   --wine: #702F38;
+  --line: rgba(26, 26, 26, 0.22);
+  --muted: rgba(26, 26, 26, 0.62);
 
-  --page-padding: clamp(22px, 5vw, 72px);
-  --section-space: clamp(90px, 14vw, 190px);
-  --text-width: 680px;
+  --max-width: 1180px;
+  --gutter: 20px;
+  --section-space: 76px;
 }
-
-
-/* RESET
-======================================== */
 
 * {
   box-sizing: border-box;
@@ -31,452 +29,324 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-
-  font-family:
-    "Helvetica Neue",
-    Helvetica,
-    Arial,
-    sans-serif;
-
-  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
   line-height: 1.55;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 a {
   color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--rust);
+}
+
+main,
+.site-header,
+.site-footer {
+  width: calc(100% - (var(--gutter) * 2));
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+  display: inline-block;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 15px;
+  margin-top: 16px;
+}
+
+.site-header nav a {
+  font-size: 0.7rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
   text-decoration: none;
 }
 
-p {
-  margin-top: 0;
+/* ---------- TYPE ---------- */
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--rust);
+  font-size: 0.68rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
 }
 
 h1,
 h2,
 h3,
-h4 {
+p {
   margin-top: 0;
-  font-weight: 500;
-  line-height: 1.05;
 }
 
-
-/* HEADER
-======================================== */
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 18px var(--page-padding);
-
-  background: rgba(244, 239, 230, 0.94);
+h2 {
+  margin-bottom: 0;
 }
 
-.wordmark {
-  font-size: 15px;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
+.lead {
+  font-size: 1.2rem;
+  line-height: 1.42;
 }
 
-.main-nav {
-  display: flex;
-  gap: clamp(14px, 2.5vw, 34px);
-
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.main-nav a:hover {
-  color: var(--rust);
-}
-
-
-/* GENERAL SECTIONS
-======================================== */
-
-section {
-  padding:
-    var(--section-space)
-    var(--page-padding);
-}
-
-.section-label,
-.eyebrow {
-  margin-bottom: 35px;
-
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.section-label {
-  color: var(--rust);
-}
-
-section > h2 {
-  max-width: 1250px;
-  margin-bottom: clamp(45px, 7vw, 90px);
-
-  font-size: clamp(38px, 6vw, 82px);
-  letter-spacing: -0.035em;
-}
-
-.text-column {
-  width: min(100%, var(--text-width));
-  margin-left: auto;
-}
-
-.text-column p {
-  margin-bottom: 1.5em;
-}
-
-.emphasis {
-  margin-top: 45px;
-
-  font-size: clamp(21px, 2.3vw, 30px);
-  line-height: 1.25;
-}
-
-
-/* HERO
-======================================== */
+/* ---------- HERO ---------- */
 
 .hero {
- min-height: 100vh;
-
-  display: flex;
-  align-items: center;
-
-  padding-top: 60px;
-  padding-bottom: 80px;
-}
-
-.hero-content {
-  width: 100%;
-}
-
-.hero .eyebrow {
-  color: var(--rust);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  padding: 76px 0 92px;
 }
 
 .hero h1 {
   margin: 0;
-
-  font-size: clamp(72px, 13vw, 210px);
-  line-height: 0.9;
-  letter-spacing: -0.065em;
-  font-weight: 500;
-
-  white-space: nowrap;
+  font-size: clamp(3.9rem, 18vw, 7rem);
+  line-height: 0.82;
+  letter-spacing: -0.075em;
+  font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
-.hero-intro {
-  margin-top: 35px;
-  margin-left: auto;
-  width: min(100%, 370px);
-
-  font-size: 14px;
-  line-height: 1.45;
+.hero-role {
+  margin: 30px 0 0;
+  font-size: 1.08rem;
+  line-height: 1.35;
 }
 
-.hero-intro p {
-  margin: 0;
+.hero-location {
+  margin: 4px 0 0;
+  color: var(--muted);
 }
 
-.hero-rhizome {
-  width: 100%;
-  margin-top: 35px;
+.hero-photo {
+  display: flex;
+  justify-content: flex-start;
 }
 
-.hero-rhizome svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 210px;
-  overflow: visible;
+.photo-placeholder {
+  width: min(72vw, 300px);
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-.hero-rhizome .root {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  vector-effect: non-scaling-stroke;
-}
+/* ---------- SECTIONS ---------- */
 
-.hero-rhizome circle {
-  fill: var(--rust);
+section {
+  padding: var(--section-space) 0;
+  border-top: 1px solid var(--line);
 }
-
-/* STATEMENT
-======================================== */
 
 .statement {
-  border-top: 1px solid var(--ink);
+  max-width: 900px;
 }
 
-.statement h2 {
-  color: var(--olive);
+.statement h2,
+.section-heading h2,
+.about-section h2,
+.press-section h2,
+.contact-section h2 {
+  font-size: clamp(2.55rem, 12vw, 5rem);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+  font-weight: 600;
 }
 
-
-/* SELECTED WORK
-======================================== */
-
-.work {
-  background: var(--ink);
-  color: var(--paper);
+.statement .lead {
+  margin-top: 34px;
 }
 
-.work .section-label {
-  color: var(--rust);
+.statement p:not(.eyebrow),
+.about-section p:not(.eyebrow) {
+  max-width: 760px;
 }
 
-.featured-project {
-  margin-top: 70px;
-}
+/* ---------- WORK SECTIONS ---------- */
 
-.work .project-meta {
+.work-section {
   display: grid;
-  grid-template-columns: 1fr 2fr auto;
-  gap: 20px;
-
-  padding: 14px 0;
-  border-top: 1px solid var(--paper);
-  border-bottom: 1px solid var(--paper);
-
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  grid-template-columns: 1fr;
+  gap: 42px;
 }
 
-.work .project-meta p {
-  margin: 0;
+.section-heading {
+  position: static;
 }
 
-.project-text {
-  width: min(100%, 760px);
-  margin: 90px 0 0 auto;
+.section-intro {
+  max-width: 480px;
+  margin: 24px 0 0;
+  color: var(--muted);
 }
 
-.project-text h3 {
-  margin-bottom: 50px;
-
-  font-size: clamp(32px, 4vw, 55px);
-}
-
-.project-text p {
-  margin-bottom: 1.5em;
-}
-
-blockquote {
-  margin: 70px 0;
-  padding: 0;
-
-  border: 0;
-
-  color: var(--rust);
-
-  font-size: clamp(27px, 3.7vw, 48px);
-  line-height: 1.15;
-}
-
-
-/* FOOD / SAKE
-======================================== */
-
-.practice {
-  border-bottom: 1px solid var(--ink);
-}
-
-.food h2 {
-  color: var(--olive);
-}
-
-.sake h2 {
-  color: var(--wine);
-}
-
-
-/* SERVICES
-======================================== */
-
-.services {
-  margin-top: clamp(90px, 13vw, 170px);
-}
-
-.services > h3 {
-  margin-bottom: 35px;
-
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.service {
+.work-grid {
   display: grid;
-  grid-template-columns: minmax(180px, 1fr) 2fr;
-  gap: 50px;
-
-  padding: 28px 0;
-
-  border-top: 1px solid var(--ink);
+  grid-template-columns: 1fr;
+  gap: 42px;
 }
 
-.service:last-child {
-  border-bottom: 1px solid var(--ink);
+.work-grid h3 {
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
 }
 
-.service h4 {
-  margin: 0;
-
-  font-size: clamp(20px, 2vw, 27px);
+.work-grid p {
+  max-width: 560px;
 }
 
-.service p {
-  max-width: 650px;
-  margin: 0;
+/* ---------- ACCORDION ---------- */
+
+details {
+  border-top: 1px solid var(--line);
 }
 
-
-/* RESIDENCIES
-======================================== */
-
-.residencies h2 {
-  color: var(--rust);
+details:last-child {
+  border-bottom: 1px solid var(--line);
 }
 
-
-/* ZESTII
-======================================== */
-
-.zestii {
-  background: var(--olive);
-  color: var(--paper);
+summary {
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  padding: 17px 32px 17px 0;
+  font-size: 0.95rem;
 }
 
-.zestii .section-label {
-  color: var(--paper);
+summary::-webkit-details-marker {
+  display: none;
 }
 
-.zestii h2 {
-  font-size: clamp(60px, 10vw, 140px);
+summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: 14px;
+  font-size: 1.15rem;
+  line-height: 1;
 }
 
-.text-link {
-  display: inline-block;
-
-  margin-top: 70px;
-  padding-bottom: 5px;
-
-  border-bottom: 1px solid currentColor;
-
-  font-size: 14px;
-  letter-spacing: 0.04em;
+details[open] summary::after {
+  content: "−";
 }
 
-.text-link:hover {
-  opacity: 0.6;
+.details-content {
+  padding: 0 0 20px;
+  color: var(--muted);
 }
 
-
-/* ABOUT
-======================================== */
-
-.about h2 {
-  color: var(--rust);
+.details-content p {
+  margin-bottom: 14px;
 }
 
-
-/* PRESS
-======================================== */
-
-.press {
-  border-top: 1px solid var(--ink);
+.details-content p:last-child {
+  margin-bottom: 0;
 }
+
+/* ---------- ABOUT ---------- */
+
+.about-section {
+  margin-left: calc(var(--gutter) * -1);
+  margin-right: calc(var(--gutter) * -1);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  background: rgba(90, 107, 63, 0.055);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 35px;
+  margin-top: 38px;
+}
+
+/* ---------- PRESS ---------- */
 
 .press-list {
-  margin-top: 60px;
+  margin-top: 38px;
+  border-top: 1px solid var(--line);
 }
 
-.press-item {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 40px;
-
-  padding: 22px 0;
-
-  border-top: 1px solid var(--ink);
-}
-
-.press-item:last-child {
-  border-bottom: 1px solid var(--ink);
-}
-
-.press-item p {
+.press-list p {
   margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
 }
 
-
-/* CONTACT
-======================================== */
-
-.contact {
-  background: var(--wine);
-  color: var(--paper);
+.press-list span {
+  display: inline-block;
+  width: 58px;
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
-.contact .section-label {
-  color: var(--paper);
+.small-note {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
-.contact h2 {
-  font-size: clamp(65px, 11vw, 160px);
+/* ---------- CONTACT ---------- */
+
+.contact-intro {
+  max-width: 650px;
+  margin-top: 28px;
 }
 
-.contact-details {
+.contact-links {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-
-  margin-top: 80px;
-
-  font-size: clamp(20px, 2.6vw, 34px);
+  margin-top: 32px;
+  font-size: 1.15rem;
 }
 
-.contact-details a {
-  border-bottom: 1px solid transparent;
-}
-
-.contact-details a:hover {
-  border-color: currentColor;
-}
-
-
-/* FOOTER
-======================================== */
+/* ---------- FOOTER ---------- */
 
 .site-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 30px var(--page-padding);
-
-  background: var(--ink);
-  color: var(--paper);
-
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  flex-direction: column;
+  gap: 6px;
+  padding: 28px 0 42px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.75rem;
 }
 
 .site-footer p {
@@ -484,418 +354,160 @@ blockquote {
 }
 
 
-/* MOBILE
-======================================== */
+/* =================================
+   TABLET
+   ================================= */
 
-@media (max-width: 700px) {
+@media (min-width: 600px) {
 
-  body {
-    font-size: 16px;
+  :root {
+    --gutter: 34px;
+    --section-space: 95px;
   }
 
   .site-header {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 30px;
   }
 
-  .main-nav {
-    gap: 12px;
-    font-size: 9px;
-  }
-
-  .main-nav a:nth-child(1),
-  .main-nav a:nth-child(4) {
-    display: none;
+  .site-header nav {
+    justify-content: flex-end;
+    margin-top: 0;
   }
 
   .hero {
-    min-height: 92vh;
+    padding-top: 105px;
+    padding-bottom: 120px;
   }
 
   .hero h1 {
-  font-size: clamp(54px, 17vw, 105px);
-  white-space: nowrap;
-}
-   
-  .hero-intro {
-    margin-top: 65px;
+    font-size: clamp(5rem, 14vw, 8rem);
   }
 
-  section > h2 {
-    font-size: clamp(37px, 11vw, 58px);
+  .work-grid,
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
   }
 
-  .text-column {
-    margin-left: 0;
+  .about-grid {
+    gap: 70px;
   }
 
-  .work .project-meta {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-
-  .project-text {
-    margin-top: 60px;
-  }
-
-  .service {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .press-item {
-    grid-template-columns: 1fr;
-    gap: 5px;
-  }
-
-  .contact-details {
-    font-size: 19px;
+  .contact-links {
+    font-size: 1.35rem;
   }
 
   .site-footer {
-    align-items: flex-start;
-    gap: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
   }
 }
 
-/* ========================================
-   SELECTED WORK / GREECE RESIDENCY
-======================================== */
 
-.work-section {
-  padding: clamp(90px, 10vw, 150px) var(--page-padding);
-  background: var(--paper);
-  color: var(--ink);
-}
+/* =================================
+   DESKTOP
+   ================================= */
 
-.section-intro {
-  display: grid;
-  grid-template-columns: minmax(140px, 0.7fr) minmax(280px, 1.3fr);
-  gap: clamp(30px, 6vw, 90px);
-  margin-bottom: clamp(90px, 11vw, 150px);
-}
+@media (min-width: 900px) {
 
-.section-label,
-.project-type,
-.small-label,
-.ingredient-list {
-  font-size: 0.72rem;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
+  :root {
+    --gutter: 50px;
+    --section-space: 125px;
+  }
 
-.section-description {
-  max-width: 520px;
-  margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.55;
-}
+  body {
+    font-size: 17px;
+  }
 
+  .site-header {
+    padding: 24px 0;
+  }
 
-/* PROJECT HEADER */
+  .site-header nav {
+    gap: 14px 22px;
+  }
 
-.residency-header {
-  margin-bottom: clamp(40px, 6vw, 80px);
-}
+  .site-header nav a {
+    font-size: 0.72rem;
+  }
 
-.residency-header h2 {
-  margin: 1rem 0 1.5rem;
-  font-size: clamp(4rem, 10vw, 9rem);
-  line-height: 0.85;
-  font-weight: 400;
-}
+  .hero {
+    min-height: 76vh;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: clamp(50px, 8vw, 110px);
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 150px;
+  }
 
-.residency-header .project-meta {
-  display: block;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 0.9rem;
-  letter-spacing: 0;
-  text-transform: none;
-}
+  .hero h1 {
+    font-size: clamp(6rem, 11vw, 10rem);
+  }
 
+  .hero-role {
+    font-size: 1.35rem;
+  }
 
-/* IMAGES â€” deliberately restrained for editorial scale */
+  .hero-photo {
+    justify-content: center;
+  }
 
-.residency figure {
-  margin-top: 0;
-  margin-bottom: 0;
-}
+  .photo-placeholder {
+    width: min(100%, 360px);
+  }
 
-.residency img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* Main opening image */
-.project-hero {
-  width: min(68vw, 760px);
-  margin: 0 auto clamp(90px, 10vw, 145px);
-}
-
-.project-hero img {
-  max-height: none;
-  object-fit: contain;
-}
-
-
-/* STATEMENT */
-
-.project-statement {
-  max-width: 760px;
-  margin: 0 0 clamp(55px, 7vw, 95px);
-}
-
-.project-statement h3 {
-  margin: 0;
-  font-size: clamp(2.7rem, 5.5vw, 5.8rem);
-  line-height: 0.96;
-  font-weight: 400;
-  letter-spacing: -0.04em;
-}
-
-
-/* BODY COPY */
-
-.narrow-copy {
-  width: min(560px, 100%);
-  margin-left: clamp(0px, 17%, 220px);
-}
-
-.project-copy {
-  font-size: clamp(1rem, 1.25vw, 1.18rem);
-  line-height: 1.6;
-}
-
-.project-copy p + p {
-  margin-top: 1.5em;
-}
-
-
-/* PLACE */
-
-.place-image {
-  width: min(38vw, 400px);
-  margin: clamp(90px, 11vw, 155px) 10% clamp(100px, 12vw, 165px) auto;
-}
-
-.place-image figcaption {
-  margin-top: 0.8rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-}
-
-
-/* RESEARCH */
-
-.research-grid {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.8fr) minmax(280px, 1.2fr);
-  gap: clamp(45px, 8vw, 120px);
-  align-items: center;
-  margin: clamp(100px, 12vw, 170px) 0;
-}
-
-.research-grid figure {
-  width: min(100%, 330px);
-  margin: 0;
-}
-
-.research-copy {
-  max-width: 500px;
-}
-
-.large-copy {
-  margin-top: 2rem;
-  font-size: clamp(1.45rem, 2.4vw, 2.5rem);
-  line-height: 1.2;
-}
-
-
-/* FOOD */
-
-.food-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 400px) minmax(0, 300px);
-  gap: clamp(18px, 3vw, 45px);
-  align-items: start;
-  justify-content: start;
-  margin: clamp(100px, 12vw, 170px) 0 2rem;
-}
-
-.food-grid figure {
-  width: 100%;
-  margin: 0;
-}
-
-.food-grid figure:nth-child(2) {
-  margin-top: clamp(45px, 7vw, 90px);
-}
-
-.ingredient-list {
-  max-width: 650px;
-  margin: 3rem 0 7rem;
-  line-height: 1.7;
-}
-
-
-/* TABLE / COOKING */
-
-.table-image {
-  width: min(55vw, 600px);
-  margin: clamp(100px, 12vw, 170px) auto clamp(70px, 8vw, 110px) 0;
-}
-
-
-/* PEOPLE */
-
-.people-image {
-  width: min(52vw, 580px);
-  margin: clamp(100px, 12vw, 170px) 0 clamp(70px, 8vw, 110px) auto;
-}
-
-.project-closing {
-  max-width: 900px;
-  margin: 0;
-  padding: 3rem 0 1rem;
-  font-size: clamp(2.2rem, 4.6vw, 4.8rem);
-  line-height: 1.03;
-  letter-spacing: -0.035em;
-  font-weight: 400;
-}
-
-
-/* ========================================
-   RESIDENCIES & COLLABORATIONS
-======================================== */
-
-.collaboration-section {
-  padding: clamp(100px, 10vw, 150px) var(--page-padding);
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.collaboration-section h2 {
-  max-width: 1050px;
-  margin: 4rem 0;
-  font-size: clamp(2.7rem, 6vw, 6rem);
-  line-height: 1;
-  letter-spacing: -0.035em;
-  font-weight: 400;
-}
-
-.collaboration-section > p:not(.section-label) {
-  max-width: 620px;
-  margin-left: auto;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-.collaboration-section .text-link {
-  display: inline-block;
-  margin-top: 5rem;
-  padding-bottom: 0.3rem;
-  border-bottom: 1px solid currentColor;
-  color: inherit;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-}
-
-
-/* ========================================
-   GREECE / COLLABORATION â€” MOBILE
-======================================== */
-
-@media (max-width: 768px) {
+  .statement .lead {
+    margin-top: 42px;
+    font-size: clamp(1.25rem, 2.3vw, 1.65rem);
+  }
 
   .work-section {
-    padding: 6rem 1.25rem;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: clamp(50px, 8vw, 120px);
   }
 
-  .section-intro {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-bottom: 6rem;
+  .section-heading {
+    position: sticky;
+    top: 30px;
+    align-self: start;
   }
 
-  .residency-header h2 {
-    font-size: 20vw;
+  .work-grid {
+    gap: clamp(35px, 5vw, 70px);
   }
 
-  .project-hero {
-    width: min(100%, 620px);
-    margin: 0 auto 5rem;
+  .lead {
+    font-size: clamp(1.2rem, 2.3vw, 1.65rem);
   }
 
-  .project-statement {
-    margin: 0 0 4rem;
+  .about-section {
+    margin-left: calc(var(--gutter) * -1);
+    margin-right: calc(var(--gutter) * -1);
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
   }
 
-  .project-statement h3 {
-    font-size: 12vw;
+  .contact-links {
+    font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+  }
+}
+
+
+/* =================================
+   LARGE DESKTOP
+   ================================= */
+
+@media (min-width: 1200px) {
+
+  :root {
+    --gutter: 60px;
   }
 
-  .narrow-copy {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .place-image {
-    width: min(82%, 380px);
-    margin: 5rem 0 6rem auto;
-  }
-
-  .research-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    margin: 6rem 0;
-  }
-
-  .research-grid figure {
-    width: min(72%, 320px);
-  }
-
-  .food-grid {
-    grid-template-columns: 1fr 0.78fr;
-    gap: 0.8rem;
-    margin: 6rem 0 2rem;
-  }
-
-  .food-grid figure:nth-child(2) {
-    margin-top: 3rem;
-  }
-
-  .ingredient-list {
-    margin-bottom: 5rem;
-  }
-
-  .table-image {
-    width: min(88%, 560px);
-    margin: 6rem auto 4rem 0;
-  }
-
-  .people-image {
-    width: min(88%, 540px);
-    margin: 6rem 0 4rem auto;
-  }
-
-  .project-closing {
-    padding-top: 3rem;
-    font-size: 9.5vw;
-  }
-
-  .collaboration-section {
-    padding: 7rem 1.25rem;
-  }
-
-  .collaboration-section h2 {
-    font-size: 11vw;
-  }
-
-  .collaboration-section > p:not(.section-label) {
-    margin-left: 0;
+  .hero h1 {
+    font-size: 10rem;
   }
 }
