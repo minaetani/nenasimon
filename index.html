@@ -1,229 +1,485 @@
+これできた
+
+はい、続けましょう。今はドメイン設定は完了しているので、ここからサイト本体です。
+
+次の一歩：新しいHTML/CSSをGitHubに入れる
+
+GitHubで、
+
+minaetani/nenasimon → index.html
+
+を開いてください。
+
+今入っているHTMLを、今回整理した新しいHTMLに置き換えます。
+
+そのあと同じように、
+
+style.css
+
+も新しいCSSに置き換えます。
+
+ただし、今回はいきなり全部やらずに、まず index.html だけやりましょう。
+
+GitHubの index.html を開いたところのスクリーンショットを送ってください。
+そこから「どこを押すか」を一個ずつ案内します。
+
+はい、ここで合っています。 今は GitHub の index.html の編集画面です。
+
+今見えているのは、現在の古いHTMLの910行目あたりですね。
+
+今やることは1つだけ
+
+この index.html を新しいHTMLに丸ごと置き換えます。
+
+コード部分をクリック
+Macなら ⌘ + A
+重要：コードエディターの中を一度クリックしてからです。
+ページ全体ではなく、HTMLのコード全体が選択される状態にします。
+Delete
+新しいHTMLを貼り付ける
+
+その後、画面下の Commit changes で保存します。
+
+ただ、ここで一つ確認です。
+
+今のスクリーンショットを見ると、index.html は約930行あります。今回の新しいサイトはもっと短くできます。
+
+なので、私はむしろ今から今回決めた構成に合わせて、HTMLをもう一度きれいに作り直して、ここにそのまま貼れる状態にしたほうがいいと思います。
+
+構成はこれでいきます：
+
+HERO
+  ne nasi mon
+  Food practitioner / Kikizakeshi
+  Helsinki
+  [profile photo]
+
+FOOD KNOWLEDGE TRAVELS WITH PEOPLE
+  短い哲学
+
+COOKING
+  個人の料理人として
+  catering / lunch / sourdough
+  [詳細 → accordion]
+
+SAKE
+  Kikizakeshiとして
+  consulting / tasting / pairing / training
+  [詳細 → accordion]
+
+EDUCATION
+  Japanese home cooking / fermentation / food knowledge
+  workshops
+  [詳細 → accordion]
+
+ZESTII KITCHENS
+  Co-founder / organiser
+  [詳細 → accordion]
+
+ABOUT
+  4つの活動をつなぐ考え方
+  Slow Foodに影響された価値観
+  tacit & embodied knowledge
+
+PRESS
+
+CONTACT
+  email
+  Instagram
+  LinkedIn
+
+そしてGreece ResidencyはCookingのaccordionの中に入れる。
+
+これならワンページでもかなりコンパクトになります。
+
+次は私がこの構成で、完成した index.html を作ります。
+そのHTMLを丸ごと ⌘A → 貼り付け すればOK、という状態にしましょう。
+
+やって
+
+できました。今回はそのままGitHubの index.html を丸ごと置き換えられる版です。
+
+Cooking
+Sake / Kikizakeshi
+Education
+Zestii Kitchens
+About / Slow Food
+Press
+Contact
+詳細はアコーディオン
+Heroのプロフィール写真用スペース
+モバイル対応
+今までの紙・インク・rust・olive系のデザイン
+
+という構成です。
+
+まずこれを使ってください
+
+新しい index.html をダウンロード
+
+GitHubでは：
+
+コード欄をクリック → ⌘A → Delete → このHTMLの中身を全部コピー＆ペースト
+
+してください。
+
+まだ style.css は触らなくて大丈夫です。
+
+index.html を貼り終わったら、Commit changesするところまで一緒に進めましょう。 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nenasimon — the food practice of Minaë Tani-LaFleur, Helsinki-based food practitioner and certified Kikizakeshi.">
+  <meta name="description" content="Minaë Tani-LaFleur — food practitioner, Kikizakeshi, educator and co-founder of Zestii Kitchens.">
   <title>ne nasi mon — Minaë Tani-LaFleur</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
 <header class="site-header">
   <a class="wordmark" href="#top">ne nasi mon</a>
-  <nav class="main-nav" aria-label="Main navigation">
+  <nav>
     <a href="#cooking">Cooking</a>
     <a href="#sake">Sake</a>
     <a href="#education">Education</a>
     <a href="#zestii">Zestii</a>
     <a href="#about">About</a>
+    <a href="#press">Press</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <main id="top">
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">FOOD / SAKE</p>
+      <p class="eyebrow">ねなしもん</p>
       <h1>ne nasi mon</h1>
-      <div class="hero-intro">
-        <p>Minaë Tani-LaFleur</p>
-        <p>Food practitioner &amp; Kikizakeshi</p>
-        <p>Helsinki</p>
-      </div>
+      <p class="hero-role">Food practitioner &amp; Kikizakeshi</p>
+      <p class="hero-location">Helsinki, Finland</p>
     </div>
 
-    <!-- Optional portrait: replace src when ready -->
-    <figure class="hero-image placeholder">
-      <span>PORTRAIT</span>
-    </figure>
+    <div class="hero-photo">
+      <div class="photo-placeholder">Profile photo</div>
+    </div>
   </section>
 
-  <section class="statement" id="statement">
-    <p class="section-label">NE NASI MON / 根無し者</p>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <p class="eyebrow">NENASIMON</p>
     <h2>Food knowledge travels with people.</h2>
-    <p class="lead">It changes, adapts and takes root again.</p>
-
-    <details class="accordion">
-      <summary>About Nenasimon <span>+</span></summary>
-      <div class="accordion-content">
-        <p><em>Nenashimono</em> (根無し者) literally means someone without roots.</p>
-        <p>For me, being rootless does not mean being without connection. I am interested in the knowledge and practices people carry with them — ways of cooking, preserving and fermenting; tastes and memories; ways of looking at an ingredient.</p>
-        <p>When these practices encounter a new place, they meet different ingredients, climates, cultures and people. Something is carried forward, something changes, and something new can grow from the encounter.</p>
-      </div>
-    </details>
+    <p class="lead">
+      I work with food as a form of knowledge: something carried through
+      families, communities and places, and continually changed through practice.
+    </p>
+    <p>
+      My work brings together cooking, sake, fermentation and education,
+      with a particular interest in tacit and embodied knowledge — the things
+      we learn by doing, tasting, making and sharing.
+    </p>
   </section>
 
-  <section class="practice-section" id="cooking">
-    <p class="section-label">01 / COOKING</p>
-    <h2>Food practitioner / Cook</h2>
-    <p class="intro">Cooking is where food knowledge becomes embodied practice.</p>
 
-    <div class="service-list">
-      <div class="service">
-        <h3>Catering &amp; private events</h3>
-        <p>Party catering, private dinners and collaborative food events.</p>
-      </div>
-      <div class="service">
-        <h3>Lunch &amp; food service</h3>
-        <p>Lunch services and food projects through Zestii Kitchens and other collaborations.</p>
-      </div>
-      <div class="service">
-        <h3>Sourdough baking</h3>
-        <p>Small-scale sourdough baking, working with long fermentation, grains and seasonal ingredients.</p>
-      </div>
-      <div class="service">
-        <h3>Food projects &amp; residencies</h3>
-        <p>Cooking as a way of learning a place, working with local ingredients and exchanging food knowledge.</p>
-      </div>
+  <!-- COOKING -->
+  <section id="cooking" class="work-section">
+    <div class="section-heading">
+      <p class="eyebrow">01 / COOKING</p>
+      <h2>Cooking</h2>
+      <p class="section-intro">
+        Food practitioner and cook working with Japanese home cooking,
+        seasonal ingredients and fermentation.
+      </p>
     </div>
 
-    <details class="accordion">
-      <summary>Selected work: Greece, 2024 <span>+</span></summary>
-      <div class="accordion-content">
-        <p class="project-meta">Halkidiki &amp; Thessaloniki / Food residency</p>
-        <h3>Learning a place through cooking.</h3>
-        <p>In spring 2024, I spent several weeks in northern Greece, cooking with ingredients from the surrounding landscape and learning alongside local cooks.</p>
-        <p>I arrived with practices I already carried with me — Japanese home cooking, fermentation, sourdough and preserving — and began working with what I found there: local rice and sardines, semolina, herbs, flowers, mulberry leaves and coastal plants.</p>
-        <p>Rather than reproducing Japanese food in Greece, I used these practices as ways of looking, asking questions and experimenting.</p>
+    <div class="work-grid">
+      <div>
+        <h3>Cooking as practice</h3>
+        <p>
+          I cook professionally for private events, catering and lunch services,
+          while continuing to explore everyday Japanese food practices and
+          sourdough baking.
+        </p>
       </div>
-    </details>
-  </section>
 
-  <section class="practice-section" id="sake">
-    <p class="section-label">02 / SAKE</p>
-    <h2>Kikizakeshi / Sake Sommelier</h2>
-    <p class="intro">Sake is another way I explore and share traditional food knowledge through fermentation, taste, place and culture.</p>
+      <div>
+        <h3>Selected work</h3>
+        <details>
+          <summary>Greece — food residency, 2024</summary>
+          <div class="details-content">
+            <p>
+              During a two-and-a-half-week residency in Greece, I worked with
+              local cooks and ingredients in Halkidiki and Thessaloniki.
+            </p>
+            <p>
+              Rather than making “Japanese-Greek fusion”, I brought what I know
+              into conversation with what was already there: local rice, sardines,
+              sesame, herbs, coastal plants, lavender and mulberry leaves.
+            </p>
+            <p>
+              I adapted Japanese techniques and ingredients to the place, while
+              learning from local cooks and the landscape through cooking,
+              foraging and shared meals.
+            </p>
+          </div>
+        </details>
 
-    <div class="service-list">
-      <div class="service">
-        <h3>Sake consulting</h3>
-        <p>Support with sake selection, lists and service for restaurants and hospitality.</p>
-      </div>
-      <div class="service">
-        <h3>Food &amp; sake pairing</h3>
-        <p>Pairing concepts for menus, tasting dinners and special events.</p>
-      </div>
-      <div class="service">
-        <h3>Staff training</h3>
-        <p>Practical training in sake fundamentals, tasting, storage, service and pairing.</p>
-      </div>
-      <div class="service">
-        <h3>Guest sommelier &amp; tastings</h3>
-        <p>Guest shifts, guided tastings, sake dinners and collaborative events.</p>
-      </div>
-    </div>
-
-    <details class="accordion">
-      <summary>More about my sake practice <span>+</span></summary>
-      <div class="accordion-content">
-        <p>I am a certified Kikizakeshi (SSI sake sommelier), working with restaurants, hospitality professionals and consumers to make sake easier to understand, serve, pair and talk about.</p>
-        <p>My background as a cook is an important part of this work. I approach sake in relation to food and to the context in which people actually encounter and drink it.</p>
-      </div>
-    </details>
-  </section>
-
-  <section class="practice-section" id="education">
-    <p class="section-label">03 / EDUCATION</p>
-    <h2>Workshops &amp; food education</h2>
-    <p class="intro">Much of food knowledge is learned through doing — through hands, repetition, observation and taste.</p>
-
-    <div class="service-list">
-      <div class="service">
-        <h3>Japanese home cooking</h3>
-        <p>Hands-on workshops exploring everyday cooking practices and food culture.</p>
-      </div>
-      <div class="service">
-        <h3>Fermentation</h3>
-        <p>Miso, koji and other fermentation practices, with room for local ingredients and experimentation.</p>
-      </div>
-      <div class="service">
-        <h3>Food culture</h3>
-        <p>Workshops and talks connecting food, place, tradition and contemporary practice.</p>
+        <details>
+          <summary>Current cooking work</summary>
+          <div class="details-content">
+            <p>
+              Party catering, lunch services, collaborative food events and
+              sourdough baking. Available for selected collaborations in Finland
+              and internationally.
+            </p>
+          </div>
+        </details>
       </div>
     </div>
-
-    <details class="accordion">
-      <summary>Approach to teaching <span>+</span></summary>
-      <div class="accordion-content">
-        <p>I am interested in tacit and embodied knowledge: what is learned through watching, touching, tasting, repeating and participating, rather than through written instruction alone.</p>
-        <p>Workshops are therefore spaces for making and learning together, rather than simply delivering recipes or information.</p>
-      </div>
-    </details>
   </section>
 
-  <section class="project-section" id="zestii">
-    <p class="section-label">ONGOING PROJECT</p>
-    <h2>Zestii Kitchens</h2>
-    <p class="project-role">Co-founder / Organiser</p>
-    <p class="intro">Building shared infrastructure for small food entrepreneurs in Finland.</p>
 
-    <details class="accordion">
-      <summary>About Zestii Kitchens <span>+</span></summary>
-      <div class="accordion-content">
-        <p>I co-founded Zestii Kitchens as a social enterprise exploring how food knowledge becomes visible, how people can build livelihoods from the knowledge they already carry, and what kind of shared infrastructure makes that possible.</p>
-        <p>Through shared kitchen infrastructure, café operations, pop-ups, workshops and catering, Zestii creates ways for independent food practitioners to test, develop and offer their work.</p>
-      </div>
-    </details>
-
-    <a class="text-link" href="https://zestii.fi/" target="_blank" rel="noopener">Visit Zestii Kitchens →</a>
-  </section>
-
-  <section class="about-section" id="about">
-    <p class="section-label">ABOUT / THE PRACTICE</p>
-    <h2>One practice, different forms.</h2>
-
-    <div class="text-column">
-      <p>Across cooking, sake, education and community organising, my work is concerned with how food knowledge is carried, shared and kept alive.</p>
-      <p>Much of this knowledge is tacit and embodied — learned through hands, repetition, observation, taste and participation.</p>
-      <p>My approach has been strongly shaped by Slow Food's emphasis on local food cultures, biodiversity, traditional knowledge and the people who sustain them.</p>
-      <p>I am active in the Slow Food movement in Finland and the Nordics.</p>
+  <!-- SAKE -->
+  <section id="sake" class="work-section">
+    <div class="section-heading">
+      <p class="eyebrow">02 / SAKE</p>
+      <h2>Kikizakeshi</h2>
+      <p class="section-intro">
+        Certified sake sommelier working with sake as part of a living food
+        tradition.
+      </p>
     </div>
 
-    <details class="accordion">
-      <summary>Biography <span>+</span></summary>
-      <div class="accordion-content">
-        <p>Minaë Tani-LaFleur is a Helsinki-based food practitioner and certified Kikizakeshi (SSI sake sommelier).</p>
-        <p>Her practice moves between cooking, fermentation, sake, education and community-based food projects. Rooted in Japanese home cooking and shaped by living and working across different places, her work explores how food knowledge travels, adapts and encounters local ingredients and practices.</p>
+    <div class="work-grid">
+      <div>
+        <h3>Sake as food knowledge</h3>
+        <p>
+          My sake work is about more than tasting notes. I am interested in
+          the people, ingredients, techniques and cultural practices behind sake,
+          and in creating ways for people to encounter it through food.
+        </p>
       </div>
-    </details>
+
+      <div>
+        <h3>Services</h3>
+        <details>
+          <summary>What I do</summary>
+          <div class="details-content">
+            <p>
+              Sake consulting, pairing, tastings, guest sommelier work,
+              restaurant and importer collaborations, and professional training.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Collaborations</summary>
+          <div class="details-content">
+            <p>
+              Available for dinners, pop-ups, tasting events, cultural projects
+              and selected international collaborations.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
   </section>
 
-  <section class="press-section" id="press">
-    <p class="section-label">SELECTED PRESS / MEDIA</p>
-    <h2>Features, interviews and appearances.</h2>
+
+  <!-- EDUCATION -->
+  <section id="education" class="work-section">
+    <div class="section-heading">
+      <p class="eyebrow">03 / EDUCATION</p>
+      <h2>Education</h2>
+      <p class="section-intro">
+        Sharing food knowledge through workshops, making and conversation.
+      </p>
+    </div>
+
+    <div class="work-grid">
+      <div>
+        <h3>Learning through doing</h3>
+        <p>
+          I create workshops around Japanese home cooking, fermentation and
+          food culture, focusing on practical knowledge that can be experienced
+          rather than simply explained.
+        </p>
+      </div>
+
+      <div>
+        <h3>Workshops</h3>
+        <details>
+          <summary>Japanese home cooking</summary>
+          <div class="details-content">
+            <p>
+              Workshops exploring everyday Japanese cooking practices,
+              ingredients, preservation and ways of working with what is available.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Fermentation</summary>
+          <div class="details-content">
+            <p>
+              Hands-on sessions exploring fermentation as both a universal
+              process and a local practice, including miso and other traditional
+              food techniques.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Food culture &amp; knowledge</summary>
+          <div class="details-content">
+            <p>
+              Sessions for groups, cultural organisations and food communities
+              interested in food knowledge, cultural transmission and embodied
+              practice.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ZESTII -->
+  <section id="zestii" class="work-section">
+    <div class="section-heading">
+      <p class="eyebrow">04 / ZESTII KITCHENS</p>
+      <h2>Zestii Kitchens</h2>
+      <p class="section-intro">
+        Co-founder and organiser of a shared food business infrastructure
+        for small food entrepreneurs in Finland.
+      </p>
+    </div>
+
+    <div class="work-grid">
+      <div>
+        <h3>Building shared infrastructure</h3>
+        <p>
+          At Zestii Kitchens, I work with a community of food entrepreneurs to
+          build shared spaces, resources and opportunities for a more diverse,
+          human-scale food economy.
+        </p>
+      </div>
+
+      <div>
+        <details>
+          <summary>My role</summary>
+          <div class="details-content">
+            <p>
+              I work across food production, kitchen operations, community
+              organisation, partnerships and the development of the shared
+              business model.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Zestii Kitchens</summary>
+          <div class="details-content">
+            <p>
+              A social enterprise working with small food entrepreneurs,
+              particularly people whose knowledge and skills are not always
+              visible within the formal food economy.
+            </p>
+            <p>
+              <a href="https://zestii.fi/" target="_blank" rel="noopener">
+                Visit zestii.fi →
+              </a>
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <p class="eyebrow">ABOUT</p>
+    <h2>One practice, many forms.</h2>
+
+    <div class="about-grid">
+      <div>
+        <p class="lead">
+          Cooking, sake, education and community organising are different
+          expressions of the same interest: how food knowledge is carried,
+          embodied and passed on.
+        </p>
+      </div>
+
+      <div>
+        <p>
+          My work is influenced by Slow Food and by the idea that food is not
+          only a product, but also a way of connecting people, places,
+          knowledge and livelihoods.
+        </p>
+        <p>
+          I am particularly interested in tacit and embodied knowledge:
+          knowledge held in hands, senses, routines, recipes, fermentation
+          practices and shared meals.
+        </p>
+        <p>
+          I work from Helsinki and across Finland, with selected international
+          collaborations and residencies.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PRESS -->
+  <section id="press" class="press-section">
+    <p class="eyebrow">PRESS / MEDIA</p>
+    <h2>Selected press</h2>
 
     <div class="press-list">
-      <a class="press-item" href="#" aria-label="Yle article">
-        <strong>Yle</strong><span>Sake / Japanese food culture →</span>
-      </a>
-      <a class="press-item" href="#" aria-label="Ruoka ja Viini article">
-        <strong>Ruoka &amp; Viini</strong><span>Food / sake →</span>
-      </a>
-      <a class="press-item" href="#" aria-label="Zestii media coverage">
-        <strong>Zestii Kitchens</strong><span>Selected media coverage →</span>
-      </a>
+      <!-- Replace these with actual press links -->
+      <p><span>2026</span> Selected media / interview</p>
+      <p><span>2025</span> Selected media / feature</p>
+      <p><span>2024</span> Selected media / food residency</p>
     </div>
+
+    <p class="small-note">
+      Press links and publications will be added here.
+    </p>
   </section>
 
-  <section class="contact-section" id="contact">
-    <p class="section-label">CONTACT</p>
-    <h2>Let's work together.</h2>
-    <p class="intro">Sake, cooking, workshops, collaborations, residencies and food projects.</p>
 
-    <div class="contact-details">
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <p class="eyebrow">CONTACT</p>
+    <h2>Let's work together.</h2>
+
+    <p class="contact-intro">
+      For catering, sake work, workshops, collaborations, residencies or
+      other food-related projects:
+    </p>
+
+    <div class="contact-links">
       <a href="mailto:minae.tani@icloud.com">minae.tani@icloud.com</a>
-      <a href="https://www.instagram.com/ne.nasi.mon/" target="_blank" rel="noopener">Instagram / @ne.nasi.mon</a>
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn / Minaë Tani-LaFleur</a>
+      <a href="https://www.instagram.com/ne.nasi.mon/" target="_blank" rel="noopener">
+        Instagram / @ne.nasi.mon
+      </a>
+      <a href="#" aria-label="LinkedIn — add profile URL">
+        LinkedIn
+      </a>
     </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <a class="wordmark" href="#top">ne nasi mon</a>
-  <p>Food / Sake / Helsinki</p>
+  <p>ne nasi mon / Minaë Tani-LaFleur</p>
+  <p>Food / Sake / Knowledge</p>
 </footer>
+
 </body>
 </html>
